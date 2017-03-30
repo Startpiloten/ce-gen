@@ -1,0 +1,19 @@
+{
+  "name": "bo/ce-gen",
+  "description": "Content Element generator for startpilot",
+  "type": "tool",
+  "authors": [
+    {
+      "name": "Boris Schauer",
+      "email": "me@bschauer.de"
+    }
+  ],
+  "replace": {
+    "ce-gen": "self.version"
+  },
+  "bin": [
+    "ce-geneartor.sh"
+  ],
+  "minimum-stability": "dev",
+  "version": "0.1.0"
+}

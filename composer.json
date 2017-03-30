@@ -1,5 +1,6 @@
 {
   "name": "bo/ce-gen",
+  "license": "GPL-2.0",
   "description": "Content Element generator for startpilot",
   "type": "tool",
   "authors": [
@@ -12,7 +13,7 @@
     "ce-gen": "self.version"
   },
   "bin": [
-    "ce-geneartor.sh"
+    "ce-gen.sh"
   ],
   "minimum-stability": "dev",
   "version": "0.1.0"

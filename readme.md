@@ -8,7 +8,7 @@ Repository URL:
 "repositories": [
     {
       "type": "git",
-      "url": "git@bitbucket.org:bschauer/ce-gen.git"
+      "url": "ssh://git@bugtracking.analogserver.de:7999/tt/ce-gen.git"
     }
   ]
 ```

@@ -19,7 +19,7 @@ Now Install with composer:
 
 ## Usage:
 
-Be shure u use a "starpilot" Provider extension that contains the folowing changes:  
+Be sure u use a "starpilot" Provider extension that contains the folowing changes:  
 [Startpilot commit #716682418a205a4691e076043026c70fa74cd273](https://github.com/misterboe/startpilot/commit/716682418a205a4691e076043026c70fa74cd273)
 
 Alwas run the script from your project root (depending on your composer.json bin-dir)

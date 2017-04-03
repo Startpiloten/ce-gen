@@ -51,14 +51,22 @@ create_simple_ce () {
     if [ -d "web/typo3conf/ext/$extname" ]
     then
         ctype
-        title
-        description
-        echo
-        source ${bindir}/bin/ts-generator.sh
-        source ${bindir}/bin/tca-generator.sh
-        source ${bindir}/bin/file-copy.sh
-        source ${bindir}/bin/be-generator.sh
-        echo
+        if [ -f "${extensiondir}/Configuration/TCA/Overrides/tt_content_${cename}.php" ]
+            then
+                echo
+                echo "This cType is already present"
+                echo
+                exit 1
+            else
+                title
+                description
+                echo
+                source ${bindir}/bin/ts-generator.sh
+                source ${bindir}/bin/tca-generator.sh
+                source ${bindir}/bin/file-copy.sh
+                source ${bindir}/bin/be-generator.sh
+                echo
+        fi
     else
         echo
         echo "No provider extension with the name $extname available";

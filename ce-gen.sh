@@ -89,7 +89,7 @@ run_generator () {
             create_simple_ce
         fi
     else
-        echo "no"
+        create_simple_ce
     fi
 }
 

@@ -7,6 +7,7 @@ echo "#########################################################################"
 echo
 
 bindir=vendor/analogde/ce-gen
+libdir=vendor/analogde/ce-lib
 
 source $bindir/bin/dir-selector.sh
 
@@ -16,12 +17,12 @@ ctype () {
     read -p "Enter cType you want to create: " cename
     while [[ $cename == '' ]]
     do
-        read -p "Enter CE Name: " cename
         echo "Enter a valid Name"
+        read -p "Enter cType you want to create: " cename
     done
     cenameUpper=${cename};
     cenameUpper=`echo ${cenameUpper:0:1} | tr  '[a-z]' '[A-Z]'`${cenameUpper:1}
-    if [ -f "${extensiondir}/Configuration/PageTS/ContentElements/${extname}_${cename}.t3s" ]
+    if [ -f "${extensiondir}/Configuration/PageTS/ContentElements/typoscript_${cename}.t3s" ]
     then
         echo "Content Element exists"
         exit 1
@@ -65,18 +66,13 @@ create_simple_ce () {
     fi
 }
 
-select_ctype_from_lib () {
-    ctypeselection=$(for d in vendor/bo/ce-lib/cTypes/* ; do printf "$(basename $d) " ; done)
-    select libcType in $ctypeselection ; do echo "$libcType" && break; echo ">>> Invalid Selection"; done
-}
-
-if [ -d "vendor/bo/ce-lib" ]
+if [ -d "vendor/analogde/ce-lib" ]
 then
     read -p "Do you want to import a cType from the library? [Y/y] " -n 1 -r
     echo    # (optional) move to a new line
     if [[ $REPLY =~ ^[Yy]$ ]]
     then
-        select_ctype_from_lib
+        source ${bindir}/bin/ce-library-tool.sh
     else
         echo
         echo "Ok! Create simple cType now:"

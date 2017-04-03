@@ -6,7 +6,7 @@ echo "# This Generator generates an Contentelement to your provider extension #"
 echo "#########################################################################"
 echo
 
-bindir=vendor/bo/ce-gen
+bindir=vendor/analogde/ce-gen
 
 source $bindir/bin/dir-selector.sh
 
@@ -46,19 +46,43 @@ description () {
     done
 }
 
-if [ -d "web/typo3conf/ext/$extname" ]
+create_simple_ce () {
+    if [ -d "web/typo3conf/ext/$extname" ]
+    then
+        ctype
+        title
+        description
+        echo
+        source ${bindir}/bin/ts-generator.sh
+        source ${bindir}/bin/tca-generator.sh
+        source ${bindir}/bin/file-copy.sh
+        source ${bindir}/bin/be-generator.sh
+        echo
+    else
+        echo
+        echo "No provider extension with the name $extname available";
+        echo
+    fi
+}
+
+select_ctype_from_lib () {
+    ctypeselection=$(for d in vendor/bo/ce-lib/cTypes/* ; do printf "$(basename $d) " ; done)
+    select libcType in $ctypeselection ; do echo "$libcType" && break; echo ">>> Invalid Selection"; done
+}
+
+if [ -d "vendor/bo/ce-lib" ]
 then
-    ctype
-    title
-    description
-    echo
-    source ${bindir}/bin/ts-generator.sh
-    source ${bindir}/bin/tca-generator.sh
-    source ${bindir}/bin/file-copy.sh
-    source ${bindir}/bin/be-generator.sh
-    echo
+    read -p "Do you want to import a cType from the library? [Y/y] " -n 1 -r
+    echo    # (optional) move to a new line
+    if [[ $REPLY =~ ^[Yy]$ ]]
+    then
+        select_ctype_from_lib
+    else
+        echo
+        echo "Ok! Create simple cType now:"
+        echo
+        create_simple_ce
+    fi
 else
-    echo
-    echo "No provider extension with the name $extname available";
-    echo
+    echo "no"
 fi

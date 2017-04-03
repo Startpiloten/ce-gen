@@ -66,19 +66,23 @@ create_simple_ce () {
     fi
 }
 
-if [ -d "vendor/analogde/ce-lib" ]
-then
-    read -p "Do you want to import a cType from the library? [Y/y] " -n 1 -r
-    echo    # (optional) move to a new line
-    if [[ $REPLY =~ ^[Yy]$ ]]
+run_generator () {
+    if [ -d "vendor/analogde/ce-lib" ]
     then
-        source ${bindir}/bin/ce-library-tool.sh
+        read -p "Do you want to import a cType from the library? [Y/N] " -n 1 -r
+        echo    # (optional) move to a new line
+        if [[ $REPLY =~ ^[Yy]$ ]]
+        then
+            source ${bindir}/bin/ce-library-tool.sh
+        else
+            echo
+            echo "Ok! Create simple cType now:"
+            echo
+            create_simple_ce
+        fi
     else
-        echo
-        echo "Ok! Create simple cType now:"
-        echo
-        create_simple_ce
+        echo "no"
     fi
-else
-    echo "no"
-fi
+}
+
+run_generator

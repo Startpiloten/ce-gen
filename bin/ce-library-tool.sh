@@ -5,10 +5,7 @@ select_ctype_from_lib () {
     select libcType in $ctypeselection ; do echo "Get cType >> $libcType << now" && break; echo ">>> Invalid Selection"; done
 }
 
-select_ctype_from_lib
-
-libcTypeUpper=${libcType};
-libcTypeUpper=`echo ${libcTypeUpper:0:1} | tr  '[a-z]' '[A-Z]'`${libcTypeUpper:1}
+generate_ce_files () {
 
 # Templates
 cp ${libdir}/cTypes/${libcType}/FE_${libcTypeUpper}.html ${extensiondir}/Resources/Private/Templates/ContentElements/FE_${libcTypeUpper}.html
@@ -28,3 +25,22 @@ sed -i '' "s/provider/${extname}/g" ${extensiondir}/Configuration/TCA/Overrides/
 echo
 echo "Your new Content Element is ready!"
 echo
+
+}
+
+select_ctype_from_lib
+
+libcTypeUpper=${libcType};
+libcTypeUpper=`echo ${libcTypeUpper:0:1} | tr  '[a-z]' '[A-Z]'`${libcTypeUpper:1}
+
+if [ -f "${extensiondir}/Configuration/TCA/Overrides/tt_content_${libcType}.php" ]
+then
+    echo
+    echo "This cType is already present"
+    echo
+    exit 1
+else
+    generate_ce_files
+fi
+
+

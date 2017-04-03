@@ -26,7 +26,7 @@ if (!is_array($GLOBALS['TCA']['tt_content']['types']['${extname}_${cename}'])) {
     [
         '${cetitle}',
         '${extname}_${cename}',
-        'EXT:startpilot/ext_icon.png'
+        'EXT:${extname}/ext_icon.png'
     ],
     '--div--',
     'after'

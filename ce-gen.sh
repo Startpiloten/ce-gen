@@ -83,7 +83,6 @@ create_irre_ce () {
 
 choose_type_to_generate () {
     PS3='What type of element do you want to generate: '
-    echo
     options=("Default Item" "Irre Item")
     select opt in "${options[@]}"
     do
@@ -106,10 +105,17 @@ choose_type_to_generate () {
 }
 
 clear_cache() {
+if [ -f /Applications/MAMP/bin/php/php7.0.15/bin/php ]
+    then
+        phpsource=/Applications/MAMP/bin/php/php7.0.15/bin/php
+    else
+        phpsource=php
+fi
 if [ -f typo3cms ]
     then
-        php typo3cms database:updateschema "*"
-        php typo3cms cache:flush --force
+        echo "php source: ${phpsource}"
+        ${phpsource} typo3cms database:updateschema "*"
+        ${phpsource} typo3cms cache:flush --force
 fi
 }
 

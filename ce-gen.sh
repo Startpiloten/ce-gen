@@ -61,10 +61,7 @@ create_simple_ce () {
                 title
                 description
                 echo
-                source ${bindir}/bin/ts-generator.sh
-                source ${bindir}/bin/tca-generator.sh
-                source ${bindir}/bin/file-copy.sh
-                source ${bindir}/bin/be-generator.sh
+                source ${bindir}/bin/basic-generator.sh
                 echo
         fi
     else

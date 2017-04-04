@@ -1,0 +1,19 @@
+tt_content.${extname}_${cename} =< lib.default
+tt_content.${extname}_${cename} {
+    templateName = FE_${cenameUpper}
+    dataProcessing {
+        10 = TYPO3\CMS\Frontend\DataProcessing\DatabaseQueryProcessor
+        10 {
+            table = tx_${cename}
+            pidInList.field = pid
+            where {
+                data = field:uid
+                intval = 1
+                wrap = tt_content=|
+            }
+
+            orderBy = sorting
+            as = tx_${cename}_items
+        }
+    }
+}

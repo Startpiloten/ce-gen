@@ -48,46 +48,88 @@ description () {
 }
 
 create_simple_ce () {
-    if [ -d "web/typo3conf/ext/$extname" ]
-    then
-        ctype
-        if [ -f "${extensiondir}/Configuration/TCA/Overrides/tt_content_${cename}.php" ]
-            then
-                echo
-                echo "This cType is already present"
-                echo
-                exit 1
-            else
-                title
-                description
-                echo
-                source ${bindir}/bin/basic-generator.sh
-                echo
-        fi
-    else
-        echo
-        echo "No provider extension with the name $extname available";
-        echo
+    ctype
+    if [ -f "${extensiondir}/Configuration/TCA/Overrides/tt_content_${cename}.php" ]
+        then
+            echo
+            echo "This cType is already present"
+            echo
+            exit 1
+        else
+            title
+            description
+            echo
+            source ${bindir}/bin/basic-generator.sh
+            echo
     fi
+}
+
+create_irre_ce () {
+    ctype
+    if [ -f "${extensiondir}/Configuration/TCA/Overrides/tt_content_${cename}.php" ]
+        then
+            echo
+            echo "This cType is already present"
+            echo
+            exit 1
+        else
+            title
+            description
+            echo
+            source ${bindir}/bin/irre-generator.sh
+            echo
+    fi
+}
+
+choose_type_to_generate () {
+    PS3='What type of element do you want to generate: '
+    echo
+    options=("Default Item" "Irre Item")
+    select opt in "${options[@]}"
+    do
+        case $opt in
+            "Default Item")
+                echo
+                create_simple_ce
+                echo
+                break
+                ;;
+            "Irre Item")
+                echo
+                create_irre_ce
+                echo
+                break
+                ;;
+            *) echo invalid option;;
+        esac
+    done
+}
+
+clear_cache() {
+if [ -f typo3cms ]
+    then
+        php typo3cms database:updateschema "*"
+        php typo3cms cache:flush --force
+fi
 }
 
 run_generator () {
     if [ -d "vendor/analogde/ce-lib" ]
     then
         read -p "Do you want to import a cType from the library? [Y/N] " -n 1 -r
-        echo    # (optional) move to a new line
+        echo
         if [[ $REPLY =~ ^[Yy]$ ]]
         then
             source ${bindir}/bin/ce-library-tool.sh
         else
             echo
-            echo "Ok! Create simple cType now:"
-            echo
-            create_simple_ce
+            echo "Ok! Create custom cType now:"
+            choose_type_to_generate
         fi
     else
-        create_simple_ce
+        choose_type_to_generate
     fi
 }
 
 run_generator
+clear_cache

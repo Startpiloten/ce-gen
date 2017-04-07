@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
+source ~/.profile
 clear
 echo
 echo "##################TYPO3 t3cegenerator by analog 2017 ####################"
@@ -105,17 +106,11 @@ choose_type_to_generate () {
 }
 
 clear_cache() {
-if [ -f /Applications/MAMP/bin/php/php7.0.15/bin/php ]
-    then
-        phpsource=/Applications/MAMP/bin/php/php7.0.15/bin/php
-    else
-        phpsource=php
-fi
 if [ -f typo3cms ]
     then
         echo "php source: ${phpsource}"
-        ${phpsource} typo3cms database:updateschema "*"
-        ${phpsource} typo3cms cache:flush --force
+        php typo3cms database:updateschema "*"
+        php typo3cms cache:flush --force
 fi
 }
 

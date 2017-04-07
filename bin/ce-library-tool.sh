@@ -42,5 +42,3 @@ then
 else
     generate_ce_files
 fi
-
-

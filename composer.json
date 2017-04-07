@@ -9,9 +9,6 @@
       "email": "me@bschauer.de"
     }
   ],
-  "replace": {
-    "ce-gen": "self.version"
-  },
   "bin": [
     "ce-gen.sh"
   ],

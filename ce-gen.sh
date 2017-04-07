@@ -1,11 +1,15 @@
 #!/usr/bin/env bash
-source ~/.profile
 clear
 echo
 echo "##################TYPO3 t3cegenerator by analog 2017 ####################"
 echo "# This Generator generates an Contentelement to your provider extension #"
 echo "#########################################################################"
 echo
+
+if [ -f ~/.profile ]
+    then
+    source ~/.profile
+fi
 
 bindir=vendor/analogde/ce-gen
 libdir=vendor/analogde/ce-lib

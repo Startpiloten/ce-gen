@@ -37,3 +37,13 @@ printf "SQL Ready" && sleep 0.2 && printf "." && sleep 0.2 && printf "." && slee
 ##ext_tables.php
 envsubst '${extname} ${cename} ${cenameUpper} ${cetitle} ${cedescription}' < $bindir/lib/irre/ext_tables.php >> $extensiondir/ext_tables.php
 printf "ext_tables.php Ready" && sleep 0.2 && printf "." && sleep 0.2 && printf "." && sleep 0.2 && printf ".\n"
+
+## SCSS
+mkdir -p $extensiondir/Resources/Public/Css/scss_includes/content-elements
+cp $bindir/lib/basic/_ctype.scss $extensiondir/Resources/Public/Css/scss_includes/content-elements/_${cename}.scss
+if ! [ -f "$extensiondir/Resources/Public/Css/scss_includes/_content-elements.scss" ]
+    then
+        touch $extensiondir/Resources/Public/Css/scss_includes/_content-elements.scss
+fi
+echo "@import 'content-elements/_${cename}.scss';" >> $extensiondir/Resources/Public/Css/scss_includes/_content-elements.scss
+printf "SCSS Ready" && sleep 0.1 && printf "." && sleep 0.1 && printf "." && sleep 0.1 && printf ".\n"

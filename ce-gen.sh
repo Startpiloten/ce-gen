@@ -25,6 +25,7 @@ ctype () {
         echo "Enter a valid Name"
         read -p "Enter cType you want to create: " cename
     done
+    cename=$(echo "$cename" | sed 's/ //g' | sed 's/[^a-zA-Z]//g' | tr '[:upper:]' '[:lower:]')
     cenameUpper=${cename};
     cenameUpper=`echo ${cenameUpper:0:1} | tr  '[a-z]' '[A-Z]'`${cenameUpper:1}
     if [ -f "${extensiondir}/Configuration/PageTS/ContentElements/typoscript_${cename}.t3s" ]

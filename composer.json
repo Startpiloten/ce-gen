@@ -13,7 +13,7 @@
     "ce-gen.sh"
   ],
   "minimum-stability": "dev",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "suggest": {
     "bo/ce-lib": "^0.1"
   }

@@ -22,6 +22,11 @@ sed -i '' "s/provider/${extname}/g" ${extensiondir}/Configuration/TypoScript/Con
 cp ${libdir}/cTypes/${libcType}/tt_content_${libcType}.php ${extensiondir}/Configuration/TCA/Overrides/tt_content_${libcType}.php
 sed -i '' "s/provider/${extname}/g" ${extensiondir}/Configuration/TCA/Overrides/tt_content_${libcType}.php
 
+if [ -f ${libdir}/cTypes/${libcType}/ext_tables.sql ]
+    then
+        cat ${libdir}/cTypes/${libcType}/ext_tables.sql | sed "s/provider/${extname}/g" >> ${extensiondir}/ext_tables.sql
+fi
+
 echo
 echo "Your new Content Element is ready!"
 echo

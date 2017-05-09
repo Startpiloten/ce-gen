@@ -6,11 +6,13 @@ echo "# This Generator generates an Contentelement to your provider extension #"
 echo "#########################################################################"
 echo
 
+COLUMNS=12
+
 if [ -f ~/.profile ]
     then
     source ~/.profile
 fi
-
+continue=true
 bindir=vendor/analogde/ce-gen
 libdir=vendor/analogde/ce-lib
 
@@ -113,7 +115,7 @@ choose_type_to_generate () {
 clear_cache() {
 if [ -f typo3cms ]
     then
-        echo "php source: ${phpsource}"
+        echo "Clear Cache and Update Schema"
         php typo3cms database:updateschema "*"
         php typo3cms cache:flush --force
 fi
@@ -137,5 +139,25 @@ run_generator () {
     fi
 }
 
-run_generator
-clear_cache
+restart () {
+    echo
+    echo
+    read -p "Do you want to restart? [Y/N] " -n 1 -r
+    echo
+    if [[ $REPLY =~ ^[Yy]$ ]]
+    then
+        continue=true
+        echo
+    else
+        continue=false
+        echo
+        echo "Bye!"
+    fi
+}
+
+while [ $continue == "true" ]
+do
+    run_generator
+    clear_cache
+    restart
+done

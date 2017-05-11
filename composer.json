@@ -13,8 +13,8 @@
     "ce-gen.sh"
   ],
   "require": {
-    "analogde/ce-lib": "*"
+    "analogde/ce-lib": "dev-master"
   },
   "minimum-stability": "dev",
-  "version": "0.2.1"
+  "version": "0.2.2"
 }

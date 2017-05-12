@@ -38,6 +38,7 @@ CREATE TABLE tx_${cename} (
     sys_language_uid int(11) DEFAULT '0' NOT NULL,
     l10n_parent int(11) DEFAULT '0' NOT NULL,
     l10n_diffsource mediumblob NOT NULL,
+    l10n_state text,
 
     PRIMARY KEY (uid),
     KEY parent (pid),

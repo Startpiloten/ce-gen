@@ -12,9 +12,9 @@
   "bin": [
     "ce-gen.sh"
   ],
+  "require": {
+    "analogde/ce-lib": "0.2.0"
+  },
   "minimum-stability": "dev",
-  "version": "0.2.0",
-  "suggest": {
-    "bo/ce-lib": "^0.1"
-  }
+  "version": "0.2.4"
 }

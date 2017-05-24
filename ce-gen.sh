@@ -57,7 +57,7 @@ description () {
 
 create_simple_ce () {
     ctype
-    if [ -f "${extensiondir}/Configuration/TCA/Overrides/tt_content_${cename}.php" ]
+    if [ -f "${extensiondir}/Configuration/TCA/tt_content_${cename}.php" ]
         then
             echo
             echo "This cType is already present"
@@ -74,7 +74,7 @@ create_simple_ce () {
 
 create_irre_ce () {
     ctype
-    if [ -f "${extensiondir}/Configuration/TCA/Overrides/tt_content_${cename}.php" ]
+    if [ -f "${extensiondir}/Configuration/TCA/tt_content_${cename}.php" ]
         then
             echo
             echo "This cType is already present"

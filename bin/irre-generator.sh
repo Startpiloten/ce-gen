@@ -16,7 +16,7 @@ envsubst '${extname} ${cename} ${cenameUpper} ${cetitle} ${cedescription}' < $bi
 printf "Frontent Template Ready" && sleep 0.1 && printf "." && sleep 0.1 && printf "." && sleep 0.1 && printf ".\n"
 
 ## TCA
-envsubst '${extname} ${cename} ${cenameUpper} ${cetitle} ${cedescription}' < $bindir/lib/irre/tt_content_ctype.php > $extensiondir/Configuration/TCA/Overrides/tt_content_${cename}.php
+envsubst '${extname} ${cename} ${cenameUpper} ${cetitle} ${cedescription}' < $bindir/lib/irre/tt_content_ctype.php > $extensiondir/Configuration/TCA/tt_content_${cename}.php
 printf "TCA Override Ready" && sleep 0.1 && printf "." && sleep 0.1 && printf "." && sleep 0.1 && printf ".\n"
 
 envsubst '${extname} ${cename} ${cenameUpper} ${cetitle} ${cedescription}' < $bindir/lib/irre/tx_table.php > $extensiondir/Configuration/TCA/tx_${cename}.php

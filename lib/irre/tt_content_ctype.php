@@ -52,7 +52,7 @@ if (!is_array($GLOBALS['TCA']['tt_content']['types']['${extname}_${cename}'])) {
     'tt_content',
     'CType',
     [
-        'Accordion',
+        '${cetitle}',
         '${extname}_${cename}',
         'EXT:${extname}/ext_icon.png'
     ],

@@ -30,7 +30,7 @@ ctype () {
     cename=$(echo "$cename" | sed 's/ //g' | sed 's/[^a-zA-Z0-9]//g' | tr '[:upper:]' '[:lower:]')
     cenameUpper=${cename};
     cenameUpper=`echo ${cenameUpper:0:1} | tr  '[a-z]' '[A-Z]'`${cenameUpper:1}
-    if [ -f "${extensiondir}/Configuration/PageTS/ContentElements/typoscript_${cename}.t3s" ]
+    if [ -f "${extensiondir}/Configuration/TCA/tt_content_${cename}.php" ]
     then
         echo "Content Element exists"
         exit 1

@@ -13,5 +13,5 @@
     "ce-gen.sh"
   ],
   "minimum-stability": "dev",
-  "version": "0.2.6"
+  "version": "0.3.0"
 }

@@ -9,7 +9,7 @@ export cedescription
 ## Backend Preview
 mkdir -p $extensiondir/Resources/Private/BackendPreviews
 envsubst '${extname} ${cename} ${cenameUpper} ${cetitle} ${cedescription}' < $bindir/lib/basic/BE_ctype.html > $extensiondir/Resources/Private/BackendPreviews/BE_${cenameUpper}.html
-printf "Backen Template Ready" && sleep 0.1 && printf "." && sleep 0.1 && printf "." && sleep 0.1 && printf ".\n"
+printf "Backend Template Ready" && sleep 0.1 && printf "." && sleep 0.1 && printf "." && sleep 0.1 && printf ".\n"
 
 ## Frontend Template
 cp $bindir/lib/basic/FE_ctype.html $extensiondir/Resources/Private/Templates/ContentElements/FE_${cenameUpper}.html

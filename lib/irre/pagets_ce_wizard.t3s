@@ -17,4 +17,4 @@ mod.wizards {
     }
 }
 
-mod.web_layout.tt_content.preview.${extname}_${cename} = EXT:${extname}/Resources/Private/BackendPreviews/BE_${cenameUpper}.html
+mod.web_layout.tt_content.preview.${extname}_${cename} = EXT:${extname}/Resources/Private/ContentElements/BackendPreviews/BE_${cenameUpper}.html

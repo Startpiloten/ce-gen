@@ -5,6 +5,10 @@
   "type": "tool",
   "authors": [
     {
+      "name": "Analog",
+      "email": "info@analog.de"
+    },
+    {
       "name": "Boris Schauer",
       "email": "me@bschauer.de"
     }

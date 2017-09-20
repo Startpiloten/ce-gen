@@ -28,7 +28,6 @@ $${extname}_${cename}_fields = array(
                 ),
             ),
             'behaviour' => array(
-                'localizationMode' => 'select',
                 'mode' => 'select',
                 'localizeChildrenAtParentLocalization' => true,
             ),

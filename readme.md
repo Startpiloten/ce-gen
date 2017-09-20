@@ -1,22 +1,5 @@
 # Content Element generator for startpilot
 
-## Install:
-
-Repository URL:
-
-```
-"repositories": [
-    {
-      "type": "git",
-      "url": "ssh://git@bugtracking.analogserver.de:7999/tt/ce-gen.git"
-    }
-  ]
-```
-
-Now Install with composer:
-
-`composer require bo/ce-gen`
-
 ## Usage:
 
 Be sure u use a "starpilot" Provider extension that contains the folowing changes:  

@@ -60,7 +60,7 @@ mmtitle () {
     while [[ ${mmtitle} == '' ]]
     do
         read -p "Enter a Title for the MM Item: " mmtitle
-        echo "Enter a valid Title for the MM Item"
+        echo "Enter a valid Title for the MM Item (singular)"
     done
     mmtitleLower=$(echo "$mmtitle" | sed 's/ //g' | sed 's/[^a-zA-Z0-9]//g' | tr '[:upper:]' '[:lower:]')
 }

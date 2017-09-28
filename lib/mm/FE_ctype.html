@@ -1,0 +1,14 @@
+<div xmlns="http://www.w3.org/1999/xhtml" lang="en"
+	 xmlns:v="http://typo3.org/ns/FluidTYPO3/Vhs/ViewHelpers"
+	 xmlns:f="http://xsd.helhum.io/ns/typo3/cms-fluid/master/ViewHelpers"
+	 data-namespace-typo3-fluid="true">
+
+	<f:layout name="Default" />
+
+	<f:section name="Main">
+		{data.header}
+		<f:for each="{tx_${mmtitleLower}_items}" as="item">
+			{item.data.header}
+		</f:for>
+	</f:section>
+</div>

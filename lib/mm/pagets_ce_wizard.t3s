@@ -1,0 +1,20 @@
+mod.wizards {
+    newContentElement {
+        wizardItems {
+            common {
+                elements {
+                    ${extname}_${cename} {
+                        iconIdentifier = default-icon
+                        title = ${cetitle}
+                        description = ${cedescription}
+                        tt_content_defValues {
+                            CType = ${extname}_${cename}
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+mod.web_layout.tt_content.preview.${extname}_${cename} = EXT:${extname}/Resources/Private/ContentElements/BackendPreviews/BE_${cenameUpper}.html

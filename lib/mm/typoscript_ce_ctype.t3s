@@ -1,0 +1,19 @@
+tt_content.${extname}_${cename} =< lib.default
+tt_content.${extname}_${cename} {
+    templateName = FE_${cenameUpper}
+    dataProcessing {
+        10 = TYPO3\CMS\Frontend\DataProcessing\DatabaseQueryProcessor
+        10 {
+            table = tx_${mmtitleLower}
+            pidInList = root,-1
+            recursive = 2
+            selectFields = tx_${mmtitleLower}.*
+            join = tt_content_tx_${mmtitleLower}_mm ON tt_content_tx_${mmtitleLower}_mm.uid_foreign = tx_${mmtitleLower}.uid
+            where.data = field:###selected_tx_${mmtitleLower}### // field:uid
+            where.intval = 1
+            where.wrap = tt_content_tx_${mmtitleLower}_mm.uid_local=|
+            orderBy = tt_content_tx_${mmtitleLower}_mm.sorting
+            as = tx_${mmtitleLower}_items
+        }
+    }
+}

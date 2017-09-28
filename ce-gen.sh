@@ -55,6 +55,16 @@ description () {
     done
 }
 
+mmtitle () {
+    read -p "Enter a Title for the MM Item: " mmtitle
+    while [[ ${mmtitle} == '' ]]
+    do
+        read -p "Enter a Title for the MM Item: " mmtitle
+        echo "Enter a valid Title for the MM Item (singular)"
+    done
+    mmtitleLower=$(echo "$mmtitle" | sed 's/ //g' | sed 's/[^a-zA-Z0-9]//g' | tr '[:upper:]' '[:lower:]')
+}
+
 create_simple_ce () {
     ctype
     if [ -f "${extensiondir}/Configuration/TCA/tt_content_${cename}.php" ]
@@ -89,9 +99,27 @@ create_irre_ce () {
     fi
 }
 
+create_mm_ce () {
+    mmtitle
+    ctype
+    if [ -f "${extensiondir}/Configuration/TCA/tt_content_${cename}.php" ]
+        then
+            echo
+            echo "This cType is already present"
+            echo
+            exit 1
+        else
+            title
+            description
+            echo
+            source ${bindir}/bin/mm-generator.sh
+            echo
+    fi
+}
+
 choose_type_to_generate () {
     PS3='What type of element do you want to generate: '
-    options=("Default Item" "Irre Item")
+    options=("Default Item" "Irre Item" "MM Item")
     select opt in "${options[@]}"
     do
         case $opt in
@@ -104,6 +132,12 @@ choose_type_to_generate () {
             "Irre Item")
                 echo
                 create_irre_ce
+                echo
+                break
+                ;;
+            "MM Item")
+                echo
+                create_mm_ce
                 echo
                 break
                 ;;

@@ -37,10 +37,6 @@ printf "Typoscript Ready" && sleep 0.1 && printf "." && sleep 0.1 && printf "." 
 envsubst '${extname} ${cename} ${cenameUpper} ${cetitle} ${cedescription} ${mmtitleLower} ${mmtitle}' < $bindir/lib/mm/ext_tables_mm.sql >> $extensiondir/ext_tables.sql
 printf "SQL Ready" && sleep 0.1 && printf "." && sleep 0.1 && printf "." && sleep 0.1 && printf ".\n"
 
-##ext_tables.php
-envsubst '${extname} ${cename} ${cenameUpper} ${cetitle} ${cedescription} ${mmtitleLower} ${mmtitle}' < $bindir/lib/mm/ext_tables.php >> $extensiondir/ext_tables.php
-printf "ext_tables.php Ready" && sleep 0.1 && printf "." && sleep 0.1 && printf "." && sleep 0.1 && printf ".\n"
-
 ## SCSS
 mkdir -p $extensiondir/Resources/Build/Assets/Scss/content-elements
 cp $bindir/lib/mm/_ctype.scss $extensiondir/Resources/Build/Assets/Scss/content-elements/_ce-${cename}.scss

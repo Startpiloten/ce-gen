@@ -139,8 +139,8 @@ return [
                 'items' => [
                     ['', 0],
                 ],
-                'foreign_table' => 'tx_${cename}',
-                'foreign_table_where' => 'AND tx_${cename}.uid=###REC_FIELD_l10n_parent### AND tx_${cename}.sys_language_uid IN (-1,0)',
+                'foreign_table' => 'tx_${mmtitleLower}',
+                'foreign_table_where' => 'AND tx_${mmtitleLower}.uid=###REC_FIELD_l10n_parent### AND tx_${mmtitleLower}.sys_language_uid IN (-1,0)',
             ]
         ],
         'l10n_diffsource' => [

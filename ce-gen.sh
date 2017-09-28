@@ -62,6 +62,7 @@ mmtitle () {
         read -p "Enter a Title for the MM Item: " mmtitle
         echo "Enter a valid Title for the MM Item"
     done
+    mmtitleLower=$(echo "$mmtitle" | sed 's/ //g' | sed 's/[^a-zA-Z0-9]//g' | tr '[:upper:]' '[:lower:]')
 }
 
 create_simple_ce () {

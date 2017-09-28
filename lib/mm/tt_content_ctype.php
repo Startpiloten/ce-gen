@@ -7,13 +7,13 @@
  * Register fields
  */
 $${extname}_${cename}_fields = array(
-    'tx_${cename}' => Array(
+    'tx_${mmtitleLower}' => Array(
         'label' => 'Relation',
         'config' => Array(
             'type' => 'group',
             'internal_type' => 'db',
-            'allowed' => 'tx_${cename}',
-            'MM' => 'tt_content_tx_${cename}_mm',
+            'allowed' => 'tx_${mmtitleLower}',
+            'MM' => 'tt_content_tx_${mmtitleLower}_mm',
             'size' => '20',
             'maxitems' => '99',
             'show_thumbs' => '1',
@@ -66,7 +66,7 @@ $GLOBALS['TCA']['tt_content']['types']['${extname}_${cename}'] = array_replace_r
     [
         'showitem' => $showitem_default_01 . '
         header,
-        tx_${cename},
+        tx_${mmtitleLower},
         ' . $showitem_default_02,
     ]
 );

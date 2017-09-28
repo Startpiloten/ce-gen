@@ -9,7 +9,7 @@ tt_content.${extname}_${cename} {
             recursive = 2
             selectFields = tx_${cename}.*
             join = tt_content_tx_${cename}_mm ON tt_content_tx_${cename}_mm.uid_foreign = tx_${cename}.uid
-            where.data = field:###selectedteamcollection### // field:uid
+            where.data = field:###selected_tx_${cename}### // field:uid
             where.intval = 1
             where.wrap = tt_content_tx_${cename}_mm.uid_local=|
             orderBy = tt_content_tx_${cename}_mm.sorting

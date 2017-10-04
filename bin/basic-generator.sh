@@ -17,7 +17,7 @@ printf "Frontent Template Ready" && sleep 0.1 && printf "." && sleep 0.1 && prin
 
 ## TCA
 mkdir -p $extensiondir/Configuration/TCA/Overrides
-envsubst '${extname} ${cename} ${cenameUpper} ${cetitle} ${cedescription}' < $bindir/lib/basic/tt_content_ctype.php > $extensiondir/Configuration/TCA/Overrides/tt_content_${cename}.php
+envsubst '${extname} ${cename} ${cenameUpper} ${cetitle} ${cedescription}' < $bindir/lib/basic/tt_content_ctype.php > $extensiondir/Configuration/TCA/tt_content_${cename}.php
 printf "TCA Ready" && sleep 0.1 && printf "." && sleep 0.1 && printf "." && sleep 0.1 && printf ".\n"
 
 ## Page TS

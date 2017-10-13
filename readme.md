@@ -22,3 +22,12 @@ use: `sh vendor/bin/ce-gen.sh`
 
 **!! do not cd into vendor/bin/ and run it there !!**
 
+## Requirements
+
+### JQ
+> jq is a lightweight and flexible command-line JSON processor.
+
+`brew install jq`
+
+https://stedolan.github.io/jq/download/
+

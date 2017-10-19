@@ -189,8 +189,17 @@ restart () {
     fi
 }
 
+prepare () {
+    mkdir -p $extensiondir/Configuration/TSconfig/ContentElements
+    mkdir -p $extensiondir/Resources/Private/ContentElements/Templates
+    mkdir -p $extensiondir/Configuration/TCA
+    mkdir -p $extensiondir/Configuration/TSconfig/ContentElements
+    mkdir -p $extensiondir/Resources/Build/Assets/Scss/content-elements
+}
+
 while [ $continue == "true" ]
 do
+    prepare
     run_generator
     clear_cache
     restart

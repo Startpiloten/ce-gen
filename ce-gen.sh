@@ -195,6 +195,7 @@ prepare () {
     mkdir -p $extensiondir/Configuration/TCA
     mkdir -p $extensiondir/Configuration/TSconfig/ContentElements
     mkdir -p $extensiondir/Resources/Build/Assets/Scss/content-elements
+    mkdir -p $extensiondir/Resources/Private/ContentElements/BackendPreviews
 }
 
 while [ $continue == "true" ]

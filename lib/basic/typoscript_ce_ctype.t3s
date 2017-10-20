@@ -1,4 +1,4 @@
-tt_content.${extname}_${cename} =< lib.default
+tt_content.${extname}_${cename} =< lib.ce_${extname}
 tt_content.${extname}_${cename} {
     templateName = FE_${cenameUpper}
 }

@@ -22,3 +22,6 @@ use: `sh vendor/bin/ce-gen.sh`
 
 **!! do not cd into vendor/bin/ and run it there !!**
 
+## Dependencies
+
+* brew install gettext

@@ -189,6 +189,14 @@ restart () {
     fi
 }
 
+info () {
+    echo
+    printf '\033[0;31m'
+    echo "For older version add this to your TS"
+    echo "lib.default < lib.ce_${extname}"
+    printf '\033[0m'
+}
+
 prepare () {
     mkdir -p $extensiondir/Configuration/TSconfig/ContentElements
     mkdir -p $extensiondir/Resources/Private/ContentElements/Templates
@@ -203,5 +211,6 @@ do
     prepare
     run_generator
     clear_cache
+    info
     restart
 done

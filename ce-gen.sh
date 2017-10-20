@@ -193,7 +193,7 @@ info () {
     echo
     printf '\033[0;31m'
     echo "For older version add this to your TS"
-    echo "lib.default < lib.ce_${extname}"
+    echo "lib.ce_${extname} < lib.default"
     printf '\033[0m'
 }
 

@@ -22,7 +22,7 @@ printf "TCA Ready" && sleep 0.1 && printf "." && sleep 0.1 && printf "." && slee
 
 ## Page TS
 mkdir -p $extensiondir/Configuration/TSconfig/ContentElements
-envsubst '${extname} ${cename} ${cenameUpper} ${cetitle} ${cedescription}' < $bindir/lib/basic/pagets_ce_wizard.t3s > $extensiondir/Configuration/TSconfig/ContentElements/${cename}.typoscript
+envsubst '${extname} ${cename} ${cenameUpper} ${cetitle} ${cedescription}' < $bindir/lib/basic/pagets_ce_wizard.t3s > $extensiondir/Configuration/TSconfig/ContentElements/${cename}.tsconfig
 printf "PageTS Ready" && sleep 0.1 && printf "." && sleep 0.1 && printf "." && sleep 0.1 && printf ".\n"
 
 ## Typoscript

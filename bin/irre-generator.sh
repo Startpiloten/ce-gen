@@ -24,7 +24,7 @@ envsubst '${extname} ${cename} ${cenameUpper} ${cetitle} ${cedescription}' < $bi
 printf "TCA tx_${cename}.php Ready" && sleep 0.1 && printf "." && sleep 0.1 && printf "." && sleep 0.1 && printf ".\n"
 
 ## Page TS
-envsubst '${extname} ${cename} ${cenameUpper} ${cetitle} ${cedescription}' < $bindir/lib/irre/pagets_ce_wizard.t3s > $extensiondir/Configuration/TSconfig/ContentElements/${cename}.typoscript
+envsubst '${extname} ${cename} ${cenameUpper} ${cetitle} ${cedescription}' < $bindir/lib/irre/pagets_ce_wizard.t3s > $extensiondir/Configuration/TSconfig/ContentElements/${cename}.tsconfig
 printf "PageTS Ready" && sleep 0.1 && printf "." && sleep 0.1 && printf "." && sleep 0.1 && printf ".\n"
 
 ## Typoscript

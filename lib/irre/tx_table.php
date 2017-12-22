@@ -7,7 +7,7 @@ return [
         'tstamp' => 'tstamp',
         'crdate' => 'crdate',
         'cruser_id' => 'cruser_id',
-        'title' => 'Item',
+        'title' => '${cetitle}-Item',
         'delete' => 'deleted',
         'versioningWS' => true,
         'origUid' => 't3_origuid',

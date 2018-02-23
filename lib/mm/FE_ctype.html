@@ -6,9 +6,11 @@
 	<f:layout name="Default" />
 
 	<f:section name="Main">
-		{data.header}
-		<f:for each="{tx_${mmtitleLower}_items}" as="item">
-			{item.data.header}
-		</f:for>
+		<div class="${cetitle}">
+			{data.header}
+			<f:for each="{tx_${mmtitleLower}_items}" as="item">
+				{item.data.header}
+			</f:for>
+		</div>
 	</f:section>
 </div>

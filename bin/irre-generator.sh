@@ -41,7 +41,8 @@ printf "ext_tables.php Ready" && sleep 0.1 && printf "." && sleep 0.1 && printf 
 
 ## SCSS
 mkdir -p $extensiondir/Resources/Build/Assets/Scss/content-elements
-cp $bindir/lib/irre/_ctype.scss $extensiondir/Resources/Build/Assets/Scss/content-elements/_ce-${cename}.scss
+envsubst '${extname} ${cename} ${cenameUpper} ${cetitle} ${cedescription}' < $bindir/lib/irre/_ctype.scss > $extensiondir/Resources/Build/Assets/Scss/content-elements/_ce-${cename}.scss
+
 if ! [ -f "$extensiondir/Resources/Build/Assets/Scss/content-elements/_ce-includes.scss" ]
     then
         touch $extensiondir/Resources/Build/Assets/Scss/content-elements/_ce-includes.scss

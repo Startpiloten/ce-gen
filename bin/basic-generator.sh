@@ -12,7 +12,7 @@ envsubst '${extname} ${cename} ${cenameUpper} ${cetitle} ${cedescription}' < $bi
 printf "Backend Template Ready" && sleep 0.1 && printf "." && sleep 0.1 && printf "." && sleep 0.1 && printf ".\n"
 
 ## Frontend Template
-cp $bindir/lib/basic/FE_ctype.html $extensiondir/Resources/Private/ContentElements/Templates/FE_${cenameUpper}.html
+envsubst '${extname} ${cename} ${cenameUpper} ${cetitle} ${cedescription}' < $bindir/lib/basic/FE_ctype.html > $extensiondir/Resources/Private/ContentElements/Templates/FE_${cenameUpper}.html
 printf "Frontent Template Ready" && sleep 0.1 && printf "." && sleep 0.1 && printf "." && sleep 0.1 && printf ".\n"
 
 ## TCA
@@ -32,7 +32,8 @@ printf "Typoscript Ready" && sleep 0.1 && printf "." && sleep 0.1 && printf "." 
 
 ## SCSS
 mkdir -p $extensiondir/Resources/Build/Assets/Scss/content-elements
-cp $bindir/lib/basic/_ctype.scss $extensiondir/Resources/Build/Assets/Scss/content-elements/_ce-${cename}.scss
+envsubst '${extname} ${cename} ${cenameUpper} ${cetitle} ${cedescription}' < $bindir/lib/basic/_ctype.scss > $extensiondir/Resources/Build/Assets/Scss/content-elements/_ce-${cename}.scss
+
 if ! [ -f "$extensiondir/Resources/Build/Assets/Scss/content-elements/_ce-includes.scss" ]
     then
         touch $extensiondir/Resources/Build/Assets/Scss/content-elements/_ce-includes.scss

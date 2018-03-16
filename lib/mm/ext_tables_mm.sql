@@ -3,13 +3,13 @@
 # Table structure for table 'tt_content'
 #
 CREATE TABLE tt_content (
-	tx_${mmtitleLower} VARCHAR(255) DEFAULT '' NOT NULL,
+	tx_${extname}_${mmtitleLower} VARCHAR(255) DEFAULT '' NOT NULL,
 );
 
 #
-# Table structure for table 'tx_${mmtitleLower}'
+# Table structure for table 'tx_${extname}_${mmtitleLower}'
 #
-CREATE TABLE tx_${mmtitleLower} (
+CREATE TABLE tx_${extname}_${mmtitleLower} (
     uid int(11) NOT NULL auto_increment,
     pid int(11) DEFAULT '0' NOT NULL,
     tt_content int(11) unsigned DEFAULT '0',
@@ -47,7 +47,7 @@ CREATE TABLE tx_${mmtitleLower} (
 );
 
 #
-# Table structure for table 'tx_${mmtitleLower}'
+# Table structure for table 'tx_${extname}_${mmtitleLower}'
 #
 CREATE TABLE tt_content_tx_${mmtitleLower}_mm (
    uid_local int(11) unsigned DEFAULT '0' NOT NULL,

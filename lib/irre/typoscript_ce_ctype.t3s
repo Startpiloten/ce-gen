@@ -4,7 +4,7 @@ tt_content.${extname}_${cename} {
     dataProcessing {
         10 = TYPO3\CMS\Frontend\DataProcessing\DatabaseQueryProcessor
         10 {
-            table = tx_${cename}
+            table = tx_${extname}_${cename}
             pidInList.field = pid
             where {
                 data = field:uid
@@ -13,7 +13,7 @@ tt_content.${extname}_${cename} {
             }
 
             orderBy = sorting
-            as = tx_${cename}_items
+            as = tx_${extname}_${cename}_items
         }
     }
 }

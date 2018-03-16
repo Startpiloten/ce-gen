@@ -7,12 +7,12 @@
  * Register fields
  */
 $${extname}_${cename}_fields = array(
-    'tx_${cename}' => array(
+    'tx_${extname}_${cename}' => array(
         'exclude' => 0,
         'label' => 'Add Item',
         'config' => array(
             'type' => 'inline',
-            'foreign_table' => 'tx_${cename}',
+            'foreign_table' => 'tx_${extname}_${cename}',
             'foreign_field' => 'tt_content',
             'maxitems' => 999,
             'appearance' => array(
@@ -72,7 +72,7 @@ $GLOBALS['TCA']['tt_content']['types']['${extname}_${cename}'] = array_replace_r
     [
         'showitem' => $showitem_default_01 . '
         header,
-        tx_${cename},
+        tx_${extname}_${cename},
         ' . $showitem_default_02,
     ]
 );

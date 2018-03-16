@@ -1,2 +1,2 @@
-\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::allowTableOnStandardPages('tx_${cename}');
-$TCA['tx_${cename}']['ctrl']['hideTable'] = 1;
+\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::allowTableOnStandardPages('tx_${extname}_${cename}');
+$TCA['tx_${extname}_${cename}']['ctrl']['hideTable'] = 1;

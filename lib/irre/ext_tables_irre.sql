@@ -3,13 +3,13 @@
 # Table structure for table 'tt_content'
 #
 CREATE TABLE tt_content (
-	tx_${cename} VARCHAR(255) DEFAULT '' NOT NULL,
+	tx_${extname}_${cename} VARCHAR(255) DEFAULT '' NOT NULL,
 );
 
 #
-# Table structure for table 'tx_${cename}'
+# Table structure for table 'tx_${extname}_${cename}'
 #
-CREATE TABLE tx_${cename} (
+CREATE TABLE tx_${extname}_${cename} (
     uid int(11) NOT NULL auto_increment,
     pid int(11) DEFAULT '0' NOT NULL,
     tt_content int(11) unsigned DEFAULT '0',

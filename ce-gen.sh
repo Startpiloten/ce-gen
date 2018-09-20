@@ -182,6 +182,12 @@ if [ -f typo3cms ]
         php typo3cms database:updateschema "*"
         php typo3cms cache:flush --force
 fi
+if [ -f typo3cms ]
+    then
+        echo "Clear Cache and Update Schema"
+        php typo3cms database:updateschema "*"
+        php typo3cms cache:flush --force
+fi
 }
 
 run_generator () {

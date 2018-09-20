@@ -1,10 +1,39 @@
 #!/usr/bin/env bash
 clear
-echo
-echo "##################TYPO3 t3cegenerator by analog 2017 ####################"
-echo "# This Generator generates an Contentelement to your provider extension #"
-echo "#########################################################################"
-echo
+
+#parse_yaml function
+parse_yaml() {
+   local prefix=$2
+   local s='[[:space:]]*' w='[a-zA-Z0-9_]*' fs=$(echo @|tr @ '\034')
+   sed -ne "s|^\($s\)\($w\)$s:$s\"\(.*\)\"$s\$|\1$fs\2$fs\3|p" \
+        -e "s|^\($s\)\($w\)$s:$s\(.*\)$s\$|\1$fs\2$fs\3|p"  $1 |
+   awk -F$fs '{
+      indent = length($1)/2;
+      vname[indent] = $2;
+      for (i in vname) {if (i > indent) {delete vname[i]}}
+      if (length($3) > 0) {
+         vn=""; for (i=0; i<indent; i++) {vn=(vn)(vname[i])("_")}
+         printf("%s%s%s=\"%s\"\n", "'$prefix'",vn, $2, $3);
+      }
+   }'
+}
+
+# Check YAML files
+if [ ! -f .t3.cegen.yaml ]; then
+    echo ".t3.cegen.yaml not found!"
+    cp vendor/analogde/ce-gen/lib/.t3.cegen.yaml .t3.cegen.yaml
+    exit
+fi
+
+# Read yaml file
+load_yaml() {
+    eval $(parse_yaml .t3.cegen.yaml)
+}
+
+load_yaml
+
+echo "Extension Name" $extension_name
+
 
 COLUMNS=12
 
@@ -12,13 +41,13 @@ if [ -f ~/.profile ]
     then
     source ~/.profile
 fi
+
 continue=true
 bindir=vendor/analogde/ce-gen
 libdir=vendor/analogde/ce-lib
 
-source $bindir/bin/dir-selector.sh
-
-extname="$(basename $extensiondir)"
+extname=$extension_name
+extensiondir=$extension_path
 
 ctype () {
     read -p "Enter cType you want to create: " cename

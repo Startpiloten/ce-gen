@@ -1,0 +1,3 @@
+extension:
+  name: startpilot
+  path: public/typo3conf/ext/startpilot

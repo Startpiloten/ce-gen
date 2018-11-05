@@ -22,4 +22,8 @@ use: `sh vendor/bin/ce-gen.sh`
 
 ## Dependencies
 
-* brew install gettext
+gettext
+```
+brew install gettext
+brew link --force gettext
+```

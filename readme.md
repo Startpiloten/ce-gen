@@ -27,3 +27,11 @@ gettext
 brew install gettext
 brew link --force gettext
 ```
+
+Use the `.t3.cegen.yaml` file to configure the ce-gen. It's placed in the project root after you run the ce-gen teh first time. 
+
+```
+extension:
+  name: startpilot
+  path: public/typo3conf/ext/startpilot
+```

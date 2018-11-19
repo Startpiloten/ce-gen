@@ -67,12 +67,11 @@ $GLOBALS['TCA']['tt_content']['ctrl']['typeicon_classes']['${extname}_${cename}'
 /***************
  * Configure element type
  */
-$GLOBALS['TCA']['tt_content']['types']['${extname}_${cename}'] = array_replace_recursive(
-    $GLOBALS['TCA']['tt_content']['types']['${extname}_${cename}'],
-    [
-        'showitem' => $showitem_default_01 . '
-        header,
-        tx_${extname}_${cename},
-        ' . $showitem_default_02,
-    ]
+$GLOBALS['TCA']['tt_content']['types']['${extname}_${cename}']['showitem'] = $GLOBALS['TCA']['tt_content']['types']['header']['showitem'];
+
+\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addToAllTCAtypes(
+    'tt_content',
+    '',
+    'tx_${extname}_${cename}',
+    'after:header'
 );

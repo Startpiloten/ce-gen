@@ -71,7 +71,7 @@ $GLOBALS['TCA']['tt_content']['types']['${extname}_${cename}']['showitem'] = $GL
 
 \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addToAllTCAtypes(
     'tt_content',
-    '',
     'tx_${extname}_${cename}',
+    '${extname}_${cename}',
     'after:header'
 );

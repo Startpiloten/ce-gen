@@ -16,5 +16,8 @@
   "bin": [
     "ce-gen.sh"
   ],
+  "require": {
+    "typo3/cms-core": "^9.5.0"
+  }
   "minimum-stability": "dev"
 }

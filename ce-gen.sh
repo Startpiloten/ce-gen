@@ -22,6 +22,7 @@ parse_yaml() {
 if [ ! -f .t3.cegen.yaml ]; then
     echo ".t3.cegen.yaml not found!"
     cp vendor/analogde/ce-gen/lib/.t3.cegen.yaml .t3.cegen.yaml
+    echo ".t3.cegen.yaml was created!"
     exit
 fi
 

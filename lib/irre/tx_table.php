@@ -148,11 +148,11 @@ return [
                 'type' => 'passthrough'
             ]
         ],
-        'header' => array(
+        'header' => [
             'l10n_mode' => 'prefixLangTitle',
             'l10n_cat' => 'text',
             'label' => 'Headline',
             'config' => $GLOBALS['TCA']['tt_content']['columns']['header']['config'],
-        )
+        ]
     ],
 ];

@@ -6,10 +6,10 @@
 /***************
  * Register fields
  */
-$${extname}_${cename}_fields = array(
-    'tx_${extname}_${mmtitleLower}' => Array(
+$${extname}_${cename}_fields = [
+    'tx_${extname}_${mmtitleLower}' => [
         'label' => 'Relation',
-        'config' => Array(
+        'config' => [
             'type' => 'group',
             'internal_type' => 'db',
             'allowed' => 'tx_${extname}_${mmtitleLower}',
@@ -25,9 +25,9 @@ $${extname}_${cename}_fields = array(
                     'searchCondition' => 'doktype = 1'
                 ]
             ],
-        )
-    ),
-);
+        ]
+    ],
+];
 
 \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addTCAcolumns('tt_content', $${extname}_${cename}_fields);
 

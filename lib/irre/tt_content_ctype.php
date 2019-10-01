@@ -6,16 +6,16 @@
 /***************
  * Register fields
  */
-$${extname}_${cename}_fields = array(
-    'tx_${extname}_${cename}' => array(
+$${extname}_${cename}_fields = [
+    'tx_${extname}_${cename}' => [
         'exclude' => 0,
         'label' => 'Add Item',
-        'config' => array(
+        'config' => [
             'type' => 'inline',
             'foreign_table' => 'tx_${extname}_${cename}',
             'foreign_field' => 'tt_content',
             'maxitems' => 999,
-            'appearance' => array(
+            'appearance' => [
                 'collapseAll' => true,
                 'useSortable' => true,
                 'showSynchronizationLink' => false,
@@ -23,17 +23,17 @@ $${extname}_${cename}_fields = array(
                 'showPossibleLocalizationRecords' => false,
                 'showRemovedLocalizationRecords' => false,
                 'expandSingle' => true,
-                'enabledControls' => array(
+                'enabledControls' => [
                     'localize' => true,
-                ),
-            ),
-            'behaviour' => array(
+                ],
+            ],
+            'behaviour' => [
                 'mode' => 'select',
                 'localizeChildrenAtParentLocalization' => true,
-            ),
-        ),
-    ),
-);
+            ],
+        ],
+    ],
+];
 
 \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addTCAcolumns('tt_content', $${extname}_${cename}_fields);
 

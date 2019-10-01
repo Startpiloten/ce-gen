@@ -6,7 +6,7 @@
 /***************
  * Register fields
  */
-$${extname}_${cename}_fields = array();
+$${extname}_${cename}_fields = [];
 
 \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addTCAcolumns('tt_content', $${extname}_${cename}_fields);
 

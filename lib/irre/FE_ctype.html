@@ -1,16 +1,13 @@
-<div xmlns="http://www.w3.org/1999/xhtml" lang="en"
-	 xmlns:v="http://typo3.org/ns/FluidTYPO3/Vhs/ViewHelpers"
-	 xmlns:f="http://xsd.helhum.io/ns/typo3/cms-fluid/master/ViewHelpers"
-	 data-namespace-typo3-fluid="true">
+<html xmlns:f="https://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
 
-	<f:layout name="Default" />
+<f:layout name="Default" />
 
-	<f:section name="Main">
-		<div class="ce-${cename}">
-			{data.header}
-			<f:for each="{tx_${extname}_${cename}_items}" as="item">
-				{item.data.header}
-			</f:for>
-		</div>
-	</f:section>
-</div>
+<f:section name="Main">
+    <div class="ce-${cename}">
+        {data.header}
+        <f:for each="{tx_${extname}_${cename}_items}" as="item">
+            {item.data.header}
+        </f:for>
+    </div>
+</f:section>
+</html>

@@ -181,13 +181,13 @@ if [ -f typo3cms ]
     then
         echo "Clear Cache and Update Schema"
         php typo3cms database:updateschema "*"
-        php typo3cms cache:flush --force
+        php typo3cms cache:flush
 fi
 if [ -f typo3cms ]
     then
         echo "Clear Cache and Update Schema"
         php typo3cms database:updateschema "*"
-        php typo3cms cache:flush --force
+        php typo3cms cache:flush
 fi
 }
 

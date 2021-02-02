@@ -26,11 +26,6 @@ return [
             'default' => 'default-icon'
         ],
     ],
-    'interface' => [
-        'showRecordFieldList' => '
-            header
-        ',
-    ],
     'types' => [
         '1' => [
             'showitem' => '
@@ -131,7 +126,6 @@ return [
         ],
         'l10n_parent' => [
             'displayCond' => 'FIELD:sys_language_uid:>:0',
-            'exclude' => 1,
             'label' => 'LLL:EXT:lang/locallang_general.php:LGL.l18n_parent',
             'config' => [
                 'type' => 'select',
